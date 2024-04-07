@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BBF384871A5582BD26196C95 /* Pods_PocketBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309616479FA548E9AD657C0D /* Pods_PocketBook.framework */; };
 		C97C0D8D2BC26990009F617C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C0D8C2BC26990009F617C /* AppDelegate.swift */; };
 		C97C0D8F2BC26990009F617C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C0D8E2BC26990009F617C /* SceneDelegate.swift */; };
 		C97C0D912BC26990009F617C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C0D902BC26990009F617C /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E50B988EE763F37FE292E10 /* Pods-PocketBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketBook.debug.xcconfig"; path = "Target Support Files/Pods-PocketBook/Pods-PocketBook.debug.xcconfig"; sourceTree = "<group>"; };
+		309616479FA548E9AD657C0D /* Pods_PocketBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA57ABA766A03C73DA9835C0 /* Pods-PocketBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketBook.release.xcconfig"; path = "Target Support Files/Pods-PocketBook/Pods-PocketBook.release.xcconfig"; sourceTree = "<group>"; };
 		C97C0D892BC26990009F617C /* PocketBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97C0D8C2BC26990009F617C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C97C0D8E2BC26990009F617C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBF384871A5582BD26196C95 /* Pods_PocketBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31161720BFFED050DBF58E45 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E50B988EE763F37FE292E10 /* Pods-PocketBook.debug.xcconfig */,
+				AA57ABA766A03C73DA9835C0 /* Pods-PocketBook.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C97C0D802BC26990009F617C = {
 			isa = PBXGroup;
 			children = (
 				C97C0D8B2BC26990009F617C /* PocketBook */,
 				C97C0D8A2BC26990009F617C /* Products */,
+				31161720BFFED050DBF58E45 /* Pods */,
+				F41AF62E1ACA9A175794D690 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = PocketBook;
 			sourceTree = "<group>";
 		};
+		F41AF62E1ACA9A175794D690 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				309616479FA548E9AD657C0D /* Pods_PocketBook.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C97C0D9D2BC26992009F617C /* Build configuration list for PBXNativeTarget "PocketBook" */;
 			buildPhases = (
+				986948369B05DABDA96A849B /* [CP] Check Pods Manifest.lock */,
 				C97C0D852BC26990009F617C /* Sources */,
 				C97C0D862BC26990009F617C /* Frameworks */,
 				C97C0D872BC26990009F617C /* Resources */,
+				D8469026A413C548151E1429 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		986948369B05DABDA96A849B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PocketBook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8469026A413C548151E1429 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PocketBook/Pods-PocketBook-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PocketBook/Pods-PocketBook-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PocketBook/Pods-PocketBook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C97C0D852BC26990009F617C /* Sources */ = {
@@ -287,11 +356,15 @@
 		};
 		C97C0D9E2BC26992009F617C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E50B988EE763F37FE292E10 /* Pods-PocketBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = T58WU9JJ3S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PocketBook/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -304,8 +377,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.addtatto.nicely.PocketBook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.addtatto.nicely;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "add-testpro";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -314,11 +389,15 @@
 		};
 		C97C0D9F2BC26992009F617C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA57ABA766A03C73DA9835C0 /* Pods-PocketBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = T58WU9JJ3S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PocketBook/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -331,8 +410,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.addtatto.nicely.PocketBook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.addtatto.nicely;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "add-testpro";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
